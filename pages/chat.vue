@@ -59,7 +59,7 @@ export default {
 	left: 0;
 	right: 0;
 	padding: 1rem;
-	height: 70px;
+	height: 80px;
 	background: #212121;
 }
 
