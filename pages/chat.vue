@@ -54,10 +54,10 @@ export default {
 }
 
 .c-form {
-	position: fixed;
-	/* bottom: 0;
+	position: absolute;
+	bottom: 0;
 	left: 0;
-	right: 0; */
+	right: 0;
 	padding: 1rem;
 	height: 80px;
 	background: #212121;
