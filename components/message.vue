@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="align-content: flex-end;">
 		<div v-if="name === 'admin'" class="system">
 			<p class="text-center">{{ text }}</p>
 			<hr />
