@@ -1,5 +1,5 @@
 <template>
-	<div style="width: 100%">
+	<div class="d-block">
 		<div v-if="name === 'admin'" class="system">
 			<p class="text-center">{{ text }}</p>
 			<hr />
