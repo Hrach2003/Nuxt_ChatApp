@@ -63,8 +63,6 @@ export default {
 }
 
 .c-chat {
-	display: flex;
-	align-items: flex-end;
 	position: absolute;
 	top: 0;
 	right: 0;
