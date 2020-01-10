@@ -63,6 +63,12 @@ export default {
 	background: #212121;
 }
 
+@media only screen and (max-width: 400px) {
+	.c-form {
+		position: fixed;
+	}
+}
+
 .c-chat {
 	display: flex;
 	flex-direction: column;
