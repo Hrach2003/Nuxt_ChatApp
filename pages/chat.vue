@@ -1,15 +1,13 @@
 <template>
 	<div class="c-wrap">
 		<div class="c-chat mb-12" ref="block">
-			<div class="d-flex align-end">
-				<Message
-					v-for="m in messages"
-					:key="m.text"
-					:name="m.name"
-					:text="m.text"
-					:owner="m.id === user.id"
-				/>
-			</div>
+			<Message
+				v-for="m in messages"
+				:key="m.text"
+				:name="m.name"
+				:text="m.text"
+				:owner="m.id === user.id"
+			/>
 		</div>
 
 		<div class="c-form">
@@ -65,6 +63,8 @@ export default {
 }
 
 .c-chat {
+	display: flex;
+	align-items: flex-end;
 	position: absolute;
 	top: 0;
 	right: 0;
