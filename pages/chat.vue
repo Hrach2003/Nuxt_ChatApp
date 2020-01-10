@@ -54,9 +54,6 @@ export default {
 }
 
 .c-form {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -67,6 +64,9 @@ export default {
 }
 
 .c-chat {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 	position: absolute;
 	top: 0;
 	right: 0;
