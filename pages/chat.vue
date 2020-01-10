@@ -2,6 +2,7 @@
 	<div class="c-wrap">
 		<div class="c-chat mb-12" ref="block">
 			<Message
+				style="width: 100%"
 				v-for="m in messages"
 				:key="m.text"
 				:name="m.name"
@@ -53,6 +54,8 @@ export default {
 }
 
 .c-form {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
 	bottom: 0;
 	left: 0;
