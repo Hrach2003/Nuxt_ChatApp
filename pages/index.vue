@@ -1,7 +1,7 @@
 <template>
 	<v-layout column justify-center align-center>
 		<v-flex xs12 sm8>
-			<v-card min-width="400px">
+			<v-card max-width="400px">
 				<v-snackbar v-model="snackbar" :timeout="6000" top>
 					{{ message }}
 					<v-btn @click="snackbar = false">Close</v-btn>
