@@ -5,7 +5,7 @@ export default function({ store }) {
   Vue.use(
     new VueSocketIO({
       debug: false,
-      connection: "http://localhost:3000",
+      connection: "https://chat-app-with-nuxt.herokuapp.com/",
       vuex: {
         store,
         actionPrefix: "SOCKET_",
