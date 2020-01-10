@@ -22,7 +22,7 @@
 		<v-app-bar app clipped-left>
 			<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-			<v-toolbar-title>CHAT ROOM {{ user.room }}</v-toolbar-title>
+			<v-toolbar-title>{{ user.room }} ROOM</v-toolbar-title>
 
 			<v-spacer></v-spacer>
 
