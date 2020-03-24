@@ -1,26 +1,58 @@
 const app = require("express")();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
-const users = require("./users")();
+const mongoose = require("mongoose");
+const User = require("./models/users");
+const Room = require("./models/room");
 
+require("dotenv/config");
 const m = (name, text, id) => ({ name, text, id });
 
+//connect to DataBase
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
+  () => {
+    console.log("DB connected");
+  }
+);
+
 io.on("connection", socket => {
-  socket.on("userJoined", (data, callback) => {
+  socket.on("userJoined", async (data, callback) => {
     if (!data.name || !data.room) {
       return callback("Something went wrong");
     }
+    // add room if we need
+    const userRoom = Room.findOne({ name: data.name });
+    // console.log(userRoom);
+    if (userRoom) {
+      socket.join(data.room);
+      userRoom.users.push(data.name);
+    } else {
+      const newRoom = new Room({
+        name: data.room,
+        users: [...users, data.name],
+        messages: []
+      });
+      await newRoom.save();
+    }
 
-    socket.join(data.room);
-
-    users.remove(socket.id);
-    users.add({
-      id: socket.id,
+    // add new user in DB
+    await User.remove({ socketID: socket.id });
+    const user = new User({
+      socketID: socket.id,
       name: data.name,
       room: data.room
     });
-
-    callback({ userId: socket.id });
+    try {
+      callback({ userId: socket.id });
+      await user.save();
+    } catch (error) {
+      console.log(error);
+    }
 
     io.to(data.room).emit("updateUsers", users.getByRoom(data.room));
     socket.emit("newMessage", m("admin", `Welcome ${data.name}!`));
