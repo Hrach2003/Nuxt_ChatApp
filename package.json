@@ -1,7 +1,7 @@
 {
-  "name": "chat-nuxt",
+  "name": "Nuxt_ChatApp",
   "version": "1.0.0",
-  "description": "My sweet Nuxt.js project",
+  "description": "Nuxt + Express + MongoDB",
   "author": "Hrach",
   "private": true,
   "scripts": {
