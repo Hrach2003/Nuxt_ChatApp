@@ -1,6 +1,6 @@
-# chat-nuxt
+# Nuxt_ChatApp
 
-> My sweet Nuxt.js project
+> Nuxt + Express + MongoDB
 
 ## Build Setup
 
